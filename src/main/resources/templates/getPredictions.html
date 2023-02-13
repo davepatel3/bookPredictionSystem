@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th = "https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<table class="table table-dark" style = "width:500px; border: 1px solid black">
+  <thead>
+  <tr>
+    <th scope="col"> Book Predictions </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="bookPred: ${prediction}">
+    <td th:text="${bookPred.author}"></td>
+    <td th:text="${bookPred.title}"></td>
+    <td th:text="${bookPred.genre}"></td>
+    <!--<td th:text="${bookPred.BID}"></td>//-->
+  </tr>
+  </tbody>
+</table>
+
+<table class = "table table-dark" style = "width:500px; border: 1px solid black">
+  <thead>
+  <tr>
+    <th scope = "col"> Top Ten Books By Popularity</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="topTen: ${topTen}">
+    <td th:text="${topTen.author}"></td>
+    <td th:text="${topTen.title}"></td>
+    <td th:text="${topTen.genre}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
